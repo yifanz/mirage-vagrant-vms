@@ -20,6 +20,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Setup CPU and RAM
     v.vmx["memsize"] = "4096"
     v.vmx["numvcpus"] = "2"
+    # Pass power status to VM
+    # Might help prevent sleep/wake crashes
+    v.vmx["chipset.useAcpiBattery"] = "TRUE"
+    v.vmx["chipset.useApmBattery"] = "true"
   end
 
   config.vm.provider :virtualbox do |vb|

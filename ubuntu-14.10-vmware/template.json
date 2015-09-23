@@ -48,7 +48,9 @@
                 "vhv.enable": "TRUE",
                 "vcpu.hotadd": "TRUE",
                 "memsize": "4096",
-                "numvcpus": "2"
+                "numvcpus": "2",
+                "chipset.useAcpiBattery": "TRUE",
+                "chipset.useApmBattery": "true"
             }
         }
     ],
