@@ -1,4 +1,6 @@
-# Mirage Virtualbox VMs via Vagrant
+# Mirage Virtualbox+VMware VMs via Vagrant
+
+Added VMware packer config. See ubuntu-14.10-vmware.
 
 ## Setup
 
@@ -11,6 +13,10 @@ This currently contains support for Ubuntu 14.04 LTS ("Trusty Tahr"), Ubuntu
 14.10 ("Utopic Unicorn"), Debian 7.8.0 ("wheezy") and Citrix XenServer 6.5.0.
 
 XenServer support imported from <https://github.com/jonludlam/packer-xenserver>.
+
+### Install `VMware`
+
+Consult VMware.
 
 ### Install `Virtualbox`
 
@@ -51,15 +57,15 @@ Then, install [Packer][]. Again, using [homebrew][] this becomes:
 
 Build a new box using `packer`:
 
-    $ make {ubuntu-14.04,ubuntu-14.10,debian-7.8.0,xenserver-6.5.0}-box
+    $ make {ubuntu-14.04,ubuntu-14.10,ubuntu-14.10-vmware,debian-7.8.0,xenserver-6.5.0}-box
 
 Bring it up and provision it using `vagrant`:
 
-    $ make {ubuntu-14.04,ubuntu-14.10,debian-7.8.0,xenserver-6.5.0}-vagrant
+    $ make {ubuntu-14.04,ubuntu-14.10,ubuntu-14.10-vmware,debian-7.8.0,xenserver-6.5.0}-vagrant
 
 Connect to it via `ssh`:
 
-    $ cd {ubuntu-14.04,ubuntu-14.10,debian-7.8.0,xenserver-6.5.0} && vagrant ssh
+    $ cd {ubuntu-14.04,ubuntu-14.10,ubuntu-14.10-vmware,debian-7.8.0,xenserver-6.5.0} && vagrant ssh
 
 Finally, within a box, make sure you add `~/bin` to your `$PATH` to use
 `0install` installed binaries (specifically, `opam`).
